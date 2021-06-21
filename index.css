@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.lnx-navigator {
+    height: 100%;
+    max-width: 120px;
+    overflow-y: auto;
+}
+
+.lnx-navigator > ul > li {
+    padding: 4px 6px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.lnx-navigator > ul > li:hover {
+    background-color: lightblue;
+}
+.lnx-navigator > ul > li > a:active {
+    color: black;
+}
+.lnx-navigator > ul > li > a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.lnx-gone {
+    display: none;
+}
+
+.lnx-visible {
+    display: block;
+}
+
+#content {
+    display: flex;
+}

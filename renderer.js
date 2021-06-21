@@ -1,0 +1,23 @@
+window.onload = (event) => {
+    let navigator = document.querySelector(".lnx-navigator");
+    navigator.addEventListener("click", handleNavigatorClick);
+};
+
+function handleNavigatorClick(event) {
+    let li = event.target.closest("li");
+    let anchor = li.querySelector("a");
+    let result = anchor.innerText.match(/[^\d]*([\d]+)[^\d]*/);
+    if (result.length == 2) {
+        let day = result[1];
+        let dayDiv = document.querySelector(`#day-${day}`);
+
+        let visibleDay = document.querySelector(".lnx-visible");
+        if (visibleDay) {
+            visibleDay.classList.remove("lnx-visible");
+            visibleDay.classList.add("lnx-gone");
+        }
+        if (dayDiv) {
+            dayDiv.classList.add("lnx-visible");
+        }
+    }
+}

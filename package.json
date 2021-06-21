@@ -1,0 +1,28 @@
+{
+  "name": "layoffing",
+  "version": "1.0.0",
+  "description": "The layoff is in processing, something should be ready for new jobs.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lincea/layoffing.git"
+  },
+  "keywords": [
+    "layoff",
+    "project",
+    "tutorials"
+  ],
+  "author": "Lincea",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lincea/layoffing/issues"
+  },
+  "homepage": "https://github.com/lincea/layoffing#readme",
+  "devDependencies": {
+    "electron": "^13.1.2"
+  }
+}
