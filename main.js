@@ -27,19 +27,19 @@ function createWindow() {
 app.whenReady().then(() => {
     createWindow();
     repo.initDB();
-    repo.createUser({
-        uuid: new Date().toString(),
-        name: "franklin.zhang",
-        dateOfBirth: new Date("1981-01-01"),
-        dateOfDeath: new Date("1981-01-01"),
-        gender: 1,
-        password: "abcdefghil",
-        emailAddress: "franklin.zhang@lincea.com",
-        homeTelephoneNumber: "010-83838383",
-        workTelephoneNumber: "020-28282828",
-        mobilePhoneNumber: "18383838383",
-        avatarUrl: "http://www.lincea.com/franklin_zhang.png",
-    });
+    // repo.createUser({
+    //     uuid: new Date().toString(),
+    //     name: "franklin.zhang",
+    //     dateOfBirth: new Date("1981-01-01"),
+    //     dateOfDeath: new Date("1981-01-01"),
+    //     gender: 1,
+    //     password: "abcdefghil",
+    //     emailAddress: "franklin.zhang@lincea.com",
+    //     homeTelephoneNumber: "010-83838383",
+    //     workTelephoneNumber: "020-28282828",
+    //     mobilePhoneNumber: "18383838383",
+    //     avatarUrl: "http://www.lincea.com/franklin_zhang.png",
+    // });
 
     app.on("activate", function () {
         // On macOS it's common to re-create a window in the app when the

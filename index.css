@@ -12,6 +12,23 @@ body {
     font-size: 12px;
 }
 
+.lnx-center {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+table > tbody > tr > td:first-child {
+    text-align: right;
+}
+.lnx-detail {
+    display: none;
+}
+.lnx-action {
+    text-align: right;
+    padding: 0 80px ;
+}
 .lnx-navigator {
     height: 100%;
     max-width: 120px;
@@ -47,4 +64,8 @@ body {
 
 #content {
     display: flex;
+}
+
+.lnx-content {
+    flex-grow: 1;
 }

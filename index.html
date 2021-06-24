@@ -54,116 +54,140 @@
             </ul>
         </div>
 
-        <div class="lnx-day-detail">
+
+        <div class="lnx-content">
             <div id="day-1" class="lnx-gone">
                 <h1>第一天</h1>
                 <p>构建倒计时列表</p>
             </div>
             <div id="day-2" class="lnx-gone">
-                <h1>第二天</h1>
-                <h2>数据库表</h2>
-                <h3>基础表</h3>
-                <table>
-                    <thead>
+                <div>
+                    <table>
+                        <h1 class="lnx-center">用户信息</h1>
+                        <tr><td><label for="user-name">用户名</label></td><td><input type="text" name="user-name" id="user-name"></td></tr>
+                        <tr><td><label for="user-date-of-birth">出生日期</label></td><td><input type="date" name="user-date-of-birth" id="user-date-of-birth"></td></tr>
+                        <tr><td><label for="user-date-of-death">死亡日期</label></td><td><input type="date" name="user-date-of-death" id="user-date-of-death"></td></tr>
+                        <tr><td><label for="user-gender">性别</label></td><td><select name="user-gender" id="user-gender"><option value="0">男</option><option value="1">女</option><option value="2">保密</option></select></td></tr>
+                        <tr><td><label for="user-password">密码</label></td><td><input type="password" name="user-password" id="user-password"></td></tr>
+                        <tr><td><label for="user-email-address">邮箱地址</label></td><td><input type="email" name="user-email-address" id="user-email-address"></td></tr>
+                        <tr><td><label for="user-home-telephone-number">家庭电话号码</label></td><td><input type="tel" name="user-home-telephone-number" id="user-home-telephone-number"></td></tr>
+                        <tr><td><label for="user-work-telephone-number">工作电话号码</label></td><td><input type="tel" name="user-work-telephone-number" id="user-work-telephone-number"></td></tr>
+                        <tr><td><label for="user-mobile-phone-number">移动电话号码</label></td><td><input type="tel" name="user-mobile-phone-number" id="user-mobile-phone-number"></td></tr>
+                        <tr><td><label for="user-avatar-url">用户头像地址</label></td><td><input type="text" name="user-avatar-url" id="user-avatar-url"></td></tr>
+                    </table>
 
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>名称</td>
-                            <td>类型</td>
-                            <td>备注</td>
-                        </tr>
-                        <tr>
-                            <td>id</td>
-                            <td>long</td>
-                            <td>唯一标识</td>
-                        </tr>
-                        <tr>
-                            <td>created_at</td>
-                            <td>long</td>
-                            <td>创建时间</td>
-                        </tr>
-                        <tr>
-                            <td>last_modified_at</td>
-                            <td>long</td>
-                            <td>修改时间</td>
-                        </tr>
-                        <tr>
-                            <td>status</td>
-                            <td>int</td>
-                            <td>记录状态</td>
-                        </tr>
-                        <tr>
-                            <td>uuid</td>
-                            <td>text</td>
-                            <td>唯一ID</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h3>用户表</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>名称</td>
-                            <td>类型</td>
-                            <td>备注</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>name</td>
-                            <td>text</td>
-                            <td>名称</td>
-                        </tr>
-                        <tr>
-                            <td>date_of_birth</td>
-                            <td>long</td>
-                            <td>出生日期</td>
-                        </tr>
-                        <tr>
-                            <td>date_of_death</td>
-                            <td>long</td>
-                            <td>死亡日期</td>
-                        </tr>
-                        <tr>
-                            <td>gender</td>
-                            <td>int</td>
-                            <td>性别</td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td>string</td>
-                            <td>密码</td>
-                        </tr>
-                        <tr>
-                            <td>email_address</td>
-                            <td>string</td>
-                            <td>邮箱地址</td>
-                        </tr>
-                        <tr>
-                            <td>home_telphone_number</td>
-                            <td>string</td>
-                            <td>家庭电话号码</td>
-                        </tr>
-                        <tr>
-                            <td>work_telphone_number</td>
-                            <td>string</td>
-                            <td>工作电话号码</td>
-                        </tr>
-                        <tr>
-                            <td>mobile_phone_number</td>
-                            <td>string</td>
-                            <td>移动电话号码</td>
-                        </tr>
-                        <tr>
-                            <td>avatar_url</td>
-                            <td>string</td>
-                            <td>头像地址</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h3>权限表</h3>
-                <p>添加数据库能力</p>
+                    <div class="lnx-action">
+                        <button id="user-create-button">创建用户</button>
+                    </div>
+                </div>
+                <div class="lnx-detail-title">显示信息</div>
+                <div class="lnx-detail">
+                    <h1>第二天</h1>
+                    <h2>数据库表</h2>
+                    <h3>基础表</h3>
+                    <table>
+                        <thead>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>名称</td>
+                                <td>类型</td>
+                                <td>备注</td>
+                            </tr>
+                            <tr>
+                                <td>id</td>
+                                <td>long</td>
+                                <td>唯一标识</td>
+                            </tr>
+                            <tr>
+                                <td>created_at</td>
+                                <td>long</td>
+                                <td>创建时间</td>
+                            </tr>
+                            <tr>
+                                <td>last_modified_at</td>
+                                <td>long</td>
+                                <td>修改时间</td>
+                            </tr>
+                            <tr>
+                                <td>status</td>
+                                <td>int</td>
+                                <td>记录状态</td>
+                            </tr>
+                            <tr>
+                                <td>uuid</td>
+                                <td>text</td>
+                                <td>唯一ID</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>用户表</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>名称</td>
+                                <td>类型</td>
+                                <td>备注</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>name</td>
+                                <td>text</td>
+                                <td>名称</td>
+                            </tr>
+                            <tr>
+                                <td>date_of_birth</td>
+                                <td>long</td>
+                                <td>出生日期</td>
+                            </tr>
+                            <tr>
+                                <td>date_of_death</td>
+                                <td>long</td>
+                                <td>死亡日期</td>
+                            </tr>
+                            <tr>
+                                <td>gender</td>
+                                <td>int</td>
+                                <td>性别</td>
+                            </tr>
+                            <tr>
+                                <td>password</td>
+                                <td>string</td>
+                                <td>密码</td>
+                            </tr>
+                            <tr>
+                                <td>email_address</td>
+                                <td>string</td>
+                                <td>邮箱地址</td>
+                            </tr>
+                            <tr>
+                                <td>home_telphone_number</td>
+                                <td>string</td>
+                                <td>家庭电话号码</td>
+                            </tr>
+                            <tr>
+                                <td>work_telphone_number</td>
+                                <td>string</td>
+                                <td>工作电话号码</td>
+                            </tr>
+                            <tr>
+                                <td>mobile_phone_number</td>
+                                <td>string</td>
+                                <td>移动电话号码</td>
+                            </tr>
+                            <tr>
+                                <td>avatar_url</td>
+                                <td>string</td>
+                                <td>头像地址</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>权限表</h3>
+                    <p>添加数据库能力</p>
+                </div>
+
             </div>
             <div id="day-3" class="lnx-gone">day3</div>
         </div>

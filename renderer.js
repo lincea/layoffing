@@ -1,6 +1,20 @@
 window.onload = (event) => {
     let navigator = document.querySelector(".lnx-navigator");
     navigator.addEventListener("click", handleNavigatorClick);
+
+    document.onclick = e => {
+        if (e.target.classList.contains('lnx-detail-title')) {
+            let next = e.target.nextElementSibling;
+            if (getComputedStyle(next).display == 'none') {
+                next.style.display = 'block';
+                e.target.innerText = '隐藏信息'
+            } else {
+                next.style.display = 'none'
+                e.target.innerText = '显示信息'
+
+            }
+        }
+    };
 };
 
 function handleNavigatorClick(event) {
