@@ -17,7 +17,32 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function initUi() {
-  initUserCreateUi();
+    initUserCreateUi();
+    initUserListUi();
+}
+
+function initUserListUi() {
+    let createUserListButton = document.querySelector('#create-user-list-button');
+    let day3UserList = document.querySelector('#day-3-user-list tbody');
+
+    createUserListButton.addEventListener('click', () => {
+        repo.getUsers((user) => {
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.gender}</td>
+            <td>${user.emailAddress}</td>
+            <td>${user.dateOfBirth}</td>
+            <td>${user.dateOfDeath}</td>
+            <td>${user.homeTelephoneNumber}</td>
+            <td>${user.workTelephoneNumber}</td>
+            <td>${user.mobilePhoneNumber}</td>
+            <td>${user.avatarUrl}</td>`;
+           day3UserList.append(tr);
+        });
+
+    });
 }
 
 function initUserCreateUi() {

@@ -22,6 +22,15 @@ exports.initDB = function () {
     });
 };
 
+exports.getUsers = function (action) {
+    db.each(`select id as id, created_at as createdAt, last_modified_at as lastModifiedAt, status, uuid, 
+            name, date_of_birth as dateOfBirth, date_of_death as dateOfDeath, gender, password, email_address as emailAddress,
+            home_telephone_number as homeTelephoneNumber, work_telephone_number as workTelephoneNumber,
+            mobile_phone_number as mobilePhoneNumber, avatar_url as avatarUrl from users`, (err, row) => {
+        action(row);
+    });
+};
+
 exports.createUser = function (user) {
     if (!user) {
         return;
