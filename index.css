@@ -16,44 +16,57 @@ body {
     text-align: center;
 }
 
-table {
-    margin: 0 auto;
-}
-table > tbody > tr > td:first-child {
+table>tbody>tr>td:first-child {
     text-align: right;
 }
+
 .lnx-detail {
     display: none;
 }
+
 .lnx-action {
     text-align: right;
-    padding: 0 80px ;
+    padding: 0 80px;
 }
+
 .lnx-navigator {
     height: 100%;
     max-width: 120px;
     overflow-y: auto;
 }
 
-.lnx-navigator > ul > li {
+button {
+    padding: 8px;
+    border-radius: 2px;
+    border: none;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+.lnx-navigator>ul>li {
     padding: 4px 6px;
     border-top: 1px solid gray;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
 }
 
-.lnx-navigator > ul > li:hover {
+.lnx-navigator>ul>li:hover {
     background-color: lightblue;
 }
-.lnx-navigator > ul > li > a:active {
+
+.lnx-navigator>ul>li>a:active {
     color: black;
 }
-.lnx-navigator > ul > li > a {
+
+.lnx-navigator>ul>li>a {
     display: block;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
 }
+
 .lnx-gone {
     display: none;
 }
@@ -68,4 +81,48 @@ table > tbody > tr > td:first-child {
 
 .lnx-content {
     flex-grow: 1;
+}
+
+.lnx-action-hover {
+    display: table-cell;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid gray;
+}
+
+thead>tr>td:last-child {
+    text-align: center;
+}
+
+td {
+    padding: 4px 8px;
+    border: 1px solid gray;
+}
+
+tr:hover {
+    background-color: khaki;
+}
+
+tr:hover>td.lnx-action-hover {
+    display: table-cell;
+}
+
+.lnx-action-button {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 4px;
+    color: white;
+    vertical-align: middle;
+    margin: 2px;
+    text-decoration: none;
+}
+
+.lnx-action-button--delete {
+    background-color: lightcoral;
+}
+
+.lnx-action-button--edit {
+    background-color: teal;
 }

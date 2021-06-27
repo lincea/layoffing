@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (element) element.innerText = text;
     };
 
-    for (const dependency of ["chrome", "node", "electron"]) {
+    for (const dependency of["chrome", "node", "electron"]) {
         replaceText(`${dependency}-version`, process.versions[dependency]);
     }
 
@@ -27,6 +27,10 @@ function initUserListUi() {
 
     createUserListButton.addEventListener('click', () => {
         repo.getUsers((user) => {
+            if (user == null) {
+                return;
+            }
+
             let tr = document.createElement('tr');
             tr.innerHTML = `
             <td>${user.id}</td>
@@ -38,8 +42,10 @@ function initUserListUi() {
             <td>${user.homeTelephoneNumber}</td>
             <td>${user.workTelephoneNumber}</td>
             <td>${user.mobilePhoneNumber}</td>
-            <td>${user.avatarUrl}</td>`;
-           day3UserList.append(tr);
+            <td>${user.avatarUrl}</td>
+            <td class="lnx-action-hover"><a class="lnx-action-button lnx-action-button--delete" href="#">删除</a></td>
+            <td class="lnx-action-hover"><a href="#" class="lnx-action-button lnx-action-button--edit">编辑</a></td>`;
+            day3UserList.append(tr);
         });
 
     });

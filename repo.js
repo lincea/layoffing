@@ -27,6 +27,9 @@ exports.getUsers = function (action) {
             name, date_of_birth as dateOfBirth, date_of_death as dateOfDeath, gender, password, email_address as emailAddress,
             home_telephone_number as homeTelephoneNumber, work_telephone_number as workTelephoneNumber,
             mobile_phone_number as mobilePhoneNumber, avatar_url as avatarUrl from users`, (err, row) => {
+        if (err) {
+            action(null);
+        }
         action(row);
     });
 };
