@@ -126,3 +126,16 @@ tr:hover>td.lnx-action-hover {
 .lnx-action-button--edit {
     background-color: teal;
 }
+
+.lnx-page-bar > a {
+    display: inline-block;
+    padding: 4px;
+    text-decoration: none;
+    margin: 2px;
+    border: 1px solid lightgray;
+    text-align: right;
+}
+
+.lnx-active {
+    background-color: aqua;
+}

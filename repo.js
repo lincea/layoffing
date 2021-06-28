@@ -23,14 +23,53 @@ exports.initDB = function () {
 };
 
 exports.getUsers = function (action) {
-    db.each(`select id as id, created_at as createdAt, last_modified_at as lastModifiedAt, status, uuid, 
+    db.each(
+        `select id as id, created_at as createdAt, last_modified_at as lastModifiedAt, status, uuid, 
             name, date_of_birth as dateOfBirth, date_of_death as dateOfDeath, gender, password, email_address as emailAddress,
             home_telephone_number as homeTelephoneNumber, work_telephone_number as workTelephoneNumber,
-            mobile_phone_number as mobilePhoneNumber, avatar_url as avatarUrl from users`, (err, row) => {
-        if (err) {
-            action(null);
+            mobile_phone_number as mobilePhoneNumber, avatar_url as avatarUrl from users`,
+        (err, row) => {
+            if (err) {
+                action(null);
+            }
+            action(row);
         }
-        action(row);
+    );
+};
+
+exports.getUserCount = function () {
+    return new Promise(function (resolve, reject) {
+        db.get("select count(*) as count from users", (err, row) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve(row);
+        });
+    });
+};
+
+exports.getUsersInPage = function (pageSize, pageOffset) {
+    return new Promise((resolve, reject) => {
+        db.serialize(function () {
+            db.all(
+                `select id as id, created_at as createdAt, last_modified_at as lastModifiedAt, status, uuid, 
+            name, date_of_birth as dateOfBirth, date_of_death as dateOfDeath, gender, password, email_address as emailAddress,
+            home_telephone_number as homeTelephoneNumber, work_telephone_number as workTelephoneNumber,
+            mobile_phone_number as mobilePhoneNumber, avatar_url as avatarUrl from users limit ${pageSize} offset ${
+                    pageSize * pageOffset
+                }`,
+                (err, rows) => {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    resolve(rows);
+                }
+            );
+        });
     });
 };
 
